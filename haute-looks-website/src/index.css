@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: #FBF7F1;
+    background-image:
+      radial-gradient(ellipse at 8% 12%, rgba(198, 165, 107, 0.07), transparent 30rem),
+      radial-gradient(ellipse at 92% 38%, rgba(226, 191, 186, 0.08), transparent 34rem);
+    color: #292522;
+    overflow-x: hidden;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  img {
+    display: block;
+  }
+
+  a,
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  :focus-visible {
+    outline: 2px solid #A8854D;
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: rgba(198, 165, 107, 0.32);
+    color: #292522;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  ::-webkit-scrollbar-track {
+    background: #FFF9F2;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #D8BA84;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #C6A56B;
+  }
+}
+
+@layer utilities {
+  .font-light {
+    font-weight: 400;
+  }
+
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #A8854D 0%, #C6A56B 50%, #8D6B35 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gold-bright {
+    background: linear-gradient(135deg, #F0DBB5 0%, #C6A56B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .border-gold-subtle {
+    border-color: rgba(198, 165, 107, 0.25);
+  }
+
+  .bg-gold-glass {
+    background: rgba(255, 249, 242, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .bg-dark-glass {
+    background: rgba(41, 37, 34, 0.92);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .shadow-soft-card {
+    box-shadow: 0 10px 30px -10px rgba(41, 37, 34, 0.06), 0 0 1px 1px rgba(198, 165, 107, 0.15);
+  }
+
+  .shadow-hover-card {
+    box-shadow: 0 20px 40px -12px rgba(41, 37, 34, 0.12), 0 0 15px rgba(198, 165, 107, 0.25);
+  }
+
+  .luxury-panel {
+    background: linear-gradient(135deg, rgba(25, 20, 18, 0.9), rgba(33, 27, 24, 0.72));
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
+
+/* Subtle gold shimmer animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, #C6A56B 0%, #FFFDF9 50%, #C6A56B 100%);
+  background-size: 200% 100%;
+  animation: shimmer 4s infinite linear;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
